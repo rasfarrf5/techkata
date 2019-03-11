@@ -18,7 +18,8 @@ ext.versions = [
         espressoRules     : '1.1.0',
         espressoJUnit     : '1.1.0',
         mockito           : '2.8.47',
-        junit             : '4.12'
+        junit             : '4.12',
+        assertj           : '3.11.1'
 ]
 
 ext.libraries = [
@@ -70,4 +71,5 @@ ext.uiText = [
 ext.unitText = [
         mockito: "org.mockito:mockito-inline:$versions.mockito",
         junit  : "junit:junit:$versions.junit",
+        assertj: "org.assertj:assertj-core:$versions.assertj",
 ]

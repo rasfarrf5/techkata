@@ -61,6 +61,7 @@ dependencies {
 
     testImplementation unitText.junit
     testImplementation unitText.mockito
+    testImplementation unitText.assertj
 }
 
 androidExtensions {
