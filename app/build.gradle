@@ -11,7 +11,7 @@ android {
         targetSdkVersion sdk.targetSdkVersion
         versionCode appVersion.versionCode
         versionName appVersion.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.tech.kata.ui.main.mockconfig.MockRunner"
     }
     buildTypes {
         release {
@@ -58,6 +58,8 @@ dependencies {
     androidTestImplementation uiText.espressoTestRunner
     androidTestImplementation uiText.espressoRules
     androidTestImplementation uiText.espressoJUnit
+    androidTestImplementation uiText.okhttpMockWebServer
+    androidTestImplementation uiText.rxIdler
 
     testImplementation unitText.junit
     testImplementation unitText.mockito

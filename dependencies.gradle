@@ -19,7 +19,8 @@ ext.versions = [
         espressoJUnit     : '1.1.0',
         mockito           : '2.8.47',
         junit             : '4.12',
-        assertj           : '3.11.1'
+        assertj           : '3.11.1',
+        rxIdler          : '0.9.0',
 ]
 
 ext.libraries = [
@@ -62,10 +63,12 @@ ext.compilers = [
 ]
 
 ext.uiText = [
-        espresso          : "androidx.test.espresso:espresso-core:$versions.espresso",
-        espressoTestRunner: "androidx.test:runner:$versions.espressoTestRunner",
-        espressoRules     : "androidx.test:rules:$versions.espressoRules",
-        espressoJUnit     : "androidx.test.ext:junit:$versions.espressoJUnit"
+        espresso           : "androidx.test.espresso:espresso-core:$versions.espresso",
+        espressoTestRunner : "androidx.test:runner:$versions.espressoTestRunner",
+        espressoRules      : "androidx.test:rules:$versions.espressoRules",
+        espressoJUnit      : "androidx.test.ext:junit:$versions.espressoJUnit",
+        okhttpMockWebServer: "com.squareup.okhttp3:mockwebserver:$versions.okhttp",
+        rxIdler            : "com.squareup.rx.idler:rx2-idler:$versions.rxIdler"
 ]
 
 ext.unitText = [

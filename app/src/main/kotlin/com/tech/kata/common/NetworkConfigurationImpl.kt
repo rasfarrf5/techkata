@@ -13,7 +13,7 @@ class NetworkConfigurationImpl(val context: Context) :
 
     override fun ioScheduler(): Scheduler = Schedulers.io()
 
-    override fun getHost(): String = "http://www.google.com/"
+    override fun getHost(): String = "http://localhost:8081/"
 
     override fun getCacheDir(): File = context.cacheDir
 
