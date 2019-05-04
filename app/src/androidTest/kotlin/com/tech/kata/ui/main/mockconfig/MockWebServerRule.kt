@@ -18,7 +18,7 @@ class MockWebServerRule : ExternalResource {
 
     @Throws(IOException::class)
     override fun before() {
-        mockWebServer.setDispatcher(dispatcher)
+        mockWebServer.dispatcher = dispatcher
         mockWebServer.start(8081)
     }
 

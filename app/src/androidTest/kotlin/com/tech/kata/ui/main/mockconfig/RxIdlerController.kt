@@ -15,7 +15,7 @@ class RxIdlerController {
         IdlingRegistry.getInstance().unregister(*idlingResources!!)
     }
 
-    fun reregisterAll() {
+    fun reRegisterAll() {
         IdlingRegistry.getInstance().register(*idlingResources!!)
     }
 
@@ -28,8 +28,8 @@ class RxIdlerController {
 
         fun initialize() {
             RxJavaPlugins.setInitIoSchedulerHandler(Rx2Idler.create("RxJava 2.x Io Scheduler"))
-            val io = Schedulers.io() //force initialization
-            if (io == null || !isInitialized) {
+            Schedulers.io() //force initialization
+            if (!isInitialized) {
                 throw RuntimeException("Initialization failed")
             }
         }

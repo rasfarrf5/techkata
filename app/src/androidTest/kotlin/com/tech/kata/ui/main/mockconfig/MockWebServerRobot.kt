@@ -17,12 +17,13 @@ class MockWebServerRobot(rule: MockWebServerRule) {
     @Throws(IOException::class)
     @JvmOverloads
     fun enqueueFromFile(relativePath: String, httpCode: Int = 200): MockWebServerRobot {
-        val fileInputStream = javaClass.classLoader
-            .getResourceAsStream(relativePath)
+        val fileInputStream = javaClass.classLoader?.getResourceAsStream(relativePath)
 
-        val mockResponse = MockResponse().setBody(Buffer().readFrom(fileInputStream))
-        mockResponse.setResponseCode(httpCode)
-        mockWebServer.enqueue(mockResponse)
+        if (fileInputStream != null) {
+            val mockResponse = MockResponse().setBody(Buffer().readFrom(fileInputStream))
+            mockResponse.setResponseCode(httpCode)
+            mockWebServer.enqueue(mockResponse)
+        }
         return this
     }
 
@@ -38,19 +39,19 @@ class MockWebServerRobot(rule: MockWebServerRule) {
     }
 
     fun useQueueDispatcher(): MockWebServerRobot {
-        mockWebServer.setDispatcher(QueueDispatcher())
+        mockWebServer.dispatcher = QueueDispatcher()
         return this
     }
 
     fun useDefaultDispatcher(): MockWebServerRobot {
-        mockWebServer.setDispatcher(dispatcher)
+        mockWebServer.dispatcher = dispatcher
         return this
     }
 
-    fun performNoSyncAction(actionToPerform: Action0): MockWebServerRobot {
+    fun performNoSyncAction(userActionToPerform: UserAction): MockWebServerRobot {
         disableNetworkSync()
         try {
-            actionToPerform.perform()
+            userActionToPerform.perform()
         } catch (e: Exception) {
             throw e
         } finally {
@@ -70,6 +71,6 @@ class MockWebServerRobot(rule: MockWebServerRule) {
     }
 
     private fun enableNetworkSync() {
-        rxIdlerController.reregisterAll()
+        rxIdlerController.reRegisterAll()
     }
 }

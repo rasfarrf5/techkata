@@ -15,7 +15,7 @@ abstract class RecordedRequestHandler {
     fun getResponseWithBody(code: Int, body: String): MockResponse {
         val mockResponse = MockResponse().setResponseCode(code)
 
-        if (!body.isEmpty()) {
+        if (body.isNotEmpty()) {
             mockResponse.setBody(body)
         }
 
@@ -43,7 +43,7 @@ abstract class RecordedRequestHandler {
             return ""
         }
 
-        val inputStream = this.javaClass.classLoader.getResourceAsStream(filename)
+        val inputStream = this.javaClass.classLoader?.getResourceAsStream(filename)
         val s = Scanner(inputStream).useDelimiter("\\A")
         return if (s.hasNext()) s.next() else ""
     }
