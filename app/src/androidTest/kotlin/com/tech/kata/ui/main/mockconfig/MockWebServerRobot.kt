@@ -11,8 +11,7 @@ class MockWebServerRobot(rule: MockWebServerRule) {
 
     private val mockWebServer: MockWebServer = rule.mockWebServer
     private val dispatcher: Dispatcher = rule.dispatcher
-    private val rxIdlerController: RxIdlerController =
-        RxIdlerController()
+    private val rxIdlerController: RxIdlerController = RxIdlerController()
 
     @Throws(IOException::class)
     @JvmOverloads

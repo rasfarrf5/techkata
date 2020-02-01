@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TechKata</string>
+
+    <string name="krisflyer_complex_password_alert_message_v2_android">KrisFlyer members are now required to use a %s to log in. Tap on \\"Reset Password\\" to create one. Re-enter your login details to link your new password to your Fingerprint.</string>
 </resources>

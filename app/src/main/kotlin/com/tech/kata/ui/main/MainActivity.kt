@@ -26,4 +26,13 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun showText(text: String) {
         mainScreenText.text = text
     }
+
+    override fun showError() {
+        mainScreenText.text = "ERROR"
+    }
+
+    override fun onPause() {
+        super.onPause()
+        presenter.onViewPaused()
+    }
 }

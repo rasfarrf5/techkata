@@ -8,6 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import java.lang.reflect.Type
 
+@Suppress("UNCHECKED_CAST")
 class RxThreadCallAdapter(
     private val subscribeScheduler: Scheduler,
     private val observerScheduler: Scheduler

@@ -8,4 +8,6 @@ abstract class AppModule {
 
     @Binds
     abstract fun providesMainPresenter(mainPresenter: MainPresenter): MainContract.Presenter
+
+
 }

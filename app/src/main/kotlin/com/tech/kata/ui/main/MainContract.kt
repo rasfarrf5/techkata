@@ -5,6 +5,8 @@ class MainContract {
     interface View {
 
         fun showText(text: String)
+
+        fun showError()
     }
 
     interface Presenter {
@@ -12,5 +14,7 @@ class MainContract {
         fun setView(view: View)
 
         fun onViewCreated()
+
+        fun onViewPaused()
     }
 }

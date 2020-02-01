@@ -1,6 +1,7 @@
 package com.tech.kata.common
 
 import com.tech.kata.TechKataApplication
+import com.tech.kata.ui.main.AppApiModule
 import com.tech.kata.ui.main.AppModule
 import com.tech.kata.ui.main.MainActivity
 import dagger.Component
@@ -10,13 +11,15 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-        modules = [
-            AndroidInjectionModule::class,
+    modules = [
+        AndroidInjectionModule::class,
 
-            AppConfigModule::class,
+        AppConfigModule::class,
 
-            AppModule::class
-        ]
+        AppModule::class,
+
+        AppApiModule::class
+    ]
 )
 interface AppComponent {
 
